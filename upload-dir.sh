@@ -109,7 +109,4 @@ create_file="./create-file.sh \
              --title `basename {}` \
              --file {}"
 
-echo "$create_file"
-
-#find "$directory" $maxdepth -type f -exec ./create-file.sh -f "$cert_pem_file" -p "$cert_password" -b "$base" --title $base --file $file
 find "$directory" $maxdepth -type f -exec bash -c "$create_file" \;
