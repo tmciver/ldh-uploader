@@ -106,7 +106,7 @@ create_file="./create-file.sh \
              -p $cert_password \
              -b $base \
              --file-content-type 'image/png' \
-             --title `basename {}` \
+             --title \`basename {}\` \
              --file {}"
 
 find "$directory" $maxdepth -type f -exec bash -c "$create_file" \;
