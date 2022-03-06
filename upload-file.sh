@@ -117,8 +117,7 @@ file_doc=$(./imports/create-file.sh \
     -p "$cert_password" \
     --title "$title" \
     --file "${file}" \
-    --file-content-type "${file_content_type}" \
-    "$file_container")
+    --file-content-type "${file_content_type}")
 
 echo "file_doc: $file_doc"
 
