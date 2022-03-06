@@ -1,0 +1,700 @@
+{
+	"256" : {
+		"propName" : "imageWidth",
+		"datatype" : "&xsd;integer"
+	},
+	"257" : {
+		"propName" : "imageLength",
+		"datatype" : "&xsd;integer"
+	},
+	"258" : {
+		"propName" : "bitsPerSample",
+		"default" : "8 8 8"
+	},
+	"259" : {
+		"propName" : "compression",
+		"values" : {
+			"1" : "uncompressed",
+			"6" : "JPEGcompression"
+		}
+	},
+	"262" : {
+		"propName" : "photometricInterpretation",
+		"values" : {
+			"2" : "RGB",
+			"6" : "YCbCr"
+		}
+	},
+	"270" : {
+		"propName" : "imageDescription"
+	},
+	"271" : {
+		"propName" : "make"
+	},
+	"272" : {
+		"propName" : "model"
+	},
+	"273" : {
+		"propName" : "stripOffsets",
+		"datatype" : "&xsd;integer"
+	},
+	"274" : {
+		"propName" : "orientation",
+		"default" : "top-left",
+		"values" : {
+			"1" : "top-left",
+			"2" : "top-right",
+			"3" : "bottom-right",
+			"4" : "bottom-left",
+			"5" : "left-top",
+			"6" : "right-top",
+			"7" : "right-bottom",
+			"8" : "left-bottom"
+		}
+	},
+	"277" : {
+		"propName" : "samplesPerPixel",
+		"default" : "3",
+		"datatype" : "&xsd;integer"
+	},
+	"278" : {
+		"propName" : "rowsPerStrip",
+		"datatype" : "&xsd;integer"
+	},
+	"279" : {
+		"propName" : "stripByteCounts",
+		"datatype" : "&xsd;integer"
+	},
+	"282" : {
+		"propName" : "xResolution",
+		"default" : "72",
+		"datatype" : "&xsd;decimal"
+	},
+	"283" : {
+		"propName" : "yResolution",
+		"default" : "72",
+		"datatype" : "&xsd;decimal"
+	},
+	"284" : {
+		"propName" : "planarConfiguration",
+		"values" : {
+			"1" : "chunky-format",
+			"2" : "planar-format"
+		}
+	},
+	"296" : {
+		"propName" : "resolutionUnit",
+		"default" : "inches",
+		"values" : {
+			"2" : "inches",
+			"3" : "centimeters"
+		}
+	},
+	"301" : {
+		"propName" : "transferFunction"
+	},
+	"305" : {
+		"propName" : "software"
+	},
+	"306" : {
+		"propName" : "dateTime"
+	},
+	"315" : {
+		"propName" : "artist"
+	},
+	"318" : {
+		"propName" : "whitePoint"
+	},
+	"319" : {
+		"propName" : "primaryChromaticities"
+	},
+	"513" : {
+		"propName" : "jpegInterchangeFormat",
+		"datatype" : "&xsd;integer"
+	},
+	"514" : {
+		"propName" : "jpegInterchangeFormatLength",
+		"datatype" : "&xsd;integer"
+	},
+	"529" : {
+		"propName" : "yCbCrCoefficients"
+	},
+	"530" : {
+		"propName" : "yCbCrSubSampling",
+		"values" : {
+			"2 1" : "YCbCr4-2-2",
+			"2 2" : "YCbCr4-2-0"
+		}
+	},
+	"531" : {
+		"propName" : "yCbCrPositioning",
+		"default" : "centered",
+		"values" : {
+			"1" : "centered",
+			"2" : "co-sited"
+		}
+	},
+	"532" : {
+		"propName" : "referenceBlackWhite"
+	},
+	"33432" : {
+		"propName" : "copyright"
+	},
+	"34665" : {
+		"propName" : "exif-info",
+		"datatype" : "&xsd;integer"
+	},
+	"34853" : {
+		"propName" : "gps-info",
+		"datatype" : "&xsd;integer"
+	},
+	"33434" : {
+		"propName" : "exposureTime",
+		"datatype" : "&xsd;decimal"
+	},
+	"33437" : {
+		"propName" : "fNumber",
+		"datatype" : "&xsd;decimal"
+	},
+	"34850" : {
+		"propName" : "exposureProgram",
+		"default" : "Not-defined",
+		"values" : {
+			"0" : "Not-defined",
+			"1" : "Manual",
+			"2" : "Normal-program",
+			"3" : "Aperture-priority",
+			"4" : "Shutter-priority",
+			"5" : "Creative-program",
+			"6" : "Action-program",
+			"7" : "Portrait-mode",
+			"8" : "Landscape-mode"
+		}
+	},
+	"34852" : {
+		"propName" : "spectralSensitivity"
+	},
+	"34855" : {
+		"propName" : "isoSpeedRatings",
+		"datatype" : "&xsd;integer"
+	},
+	"34856" : {
+		"propName" : "oecf"
+	},
+	"36864" : {
+		"propName" : "exifVersion"
+	},
+	"36867" : {
+		"propName" : "dateTimeOriginal"
+	},
+	"36868" : {
+		"propName" : "dateTimeDigitized"
+	},
+	"37121" : {
+		"propName" : "componentsConfiguration",
+		"default" : "RGB",
+		"values" : {
+			"1 2 3 0" : "YCbCr",
+			"4 5 6 0" : "RGB"
+		}
+	},
+	"37122" : {
+		"propName" : "compressedBitsPerPixel",
+		"datatype" : "&xsd;decimal"
+	},
+	"37377" : {
+		"propName" : "shutterSpeedValue",
+		"datatype" : "&xsd;decimal"
+	},
+	"37378" : {
+		"propName" : "apertureValue",
+		"datatype" : "&xsd;decimal"
+	},
+	"37379" : {
+		"propName" : "brightnessValue",
+		"datatype" : "&xsd;decimal"
+	},
+	"37380" : {
+		"propName" : "exposureBiasValue",
+		"datatype" : "&xsd;decimal"
+	},
+	"37381" : {
+		"propName" : "maxApertureValue",
+		"datatype" : "&xsd;decimal"
+	},
+	"37382" : {
+		"propName" : "subjectDistance",
+		"datatype" : "&xsd;decimal"
+	},
+	"37383" : {
+		"propName" : "meteringMode",
+		"default" : "unknown",
+		"values" : {
+			"0" : "unknown",
+			"1" : "Average",
+			"2" : "CenterWeightedAverage",
+			"3" : "Spot",
+			"4" : "MultiSpot",
+			"5" : "Pattern",
+			"6" : "Partial",
+			"255" : "other"
+		}
+	},
+	"37384" : {
+		"propName" : "lightSource",
+		"default" : "unknown",
+		"values" : {
+			"0" : "unknown",
+			"1" : "Daylight",
+			"2" : "Fluorescent",
+			"3" : "Tungsten",
+			"4" : "Flash",
+			"9" : "Fine-weather",
+			"10" : "Cloudy-weather",
+			"11" : "Shade",
+			"12" : "Daylight-fluorescent",
+			"13" : "Day-white-fluorescent",
+			"14" : "Cool-white-fluorescent",
+			"15" : "White-fluorescent",
+			"17" : "Standard-light-A",
+			"18" : "Standard-light-B",
+			"19" : "Standard-light-C",
+			"20" : "D55",
+			"21" : "D65",
+			"22" : "D75",
+			"23" : "D50",
+			"24" : "ISO-studio-tungsten",
+			"255" : "other-light-source"
+		}
+	},
+	"37385" : {
+		"propName" : "flash",
+		"values" : {
+			"0" : "NotFired",
+			"1" : "Fired",
+			"5" : "NoStrobe",
+			"7" : "Strobe",
+			"9" : "Fired-compulsory",
+			"13" : "Fired-compulsory-noreturn",
+			"15" : "Fired-compulsory-return",
+			"16" : "Flash-did-not-fire-compulsory",
+			"24" : "Flash-did-not-fire-auto",
+			"25" : "Fired-auto",
+			"29" : "Fired-auto-noreturn",
+			"31" : "Fired-auto-return",
+			"32" : "NoFlashFunction",
+			"65" : "Fired-redeye",
+			"69" : "Fired-redeye-noreturn",
+			"71" : "Fired-redeye-return",
+			"73" : "Fired-compulsory-redeye",
+			"77" : "Fired-compulsory-redeye-noreturn",
+			"79" : "Fired-compulsory-redeye-return",
+			"89" : "Fired-auto-redeye",
+			"93" : "Fired-auto-noreturn-redeye",
+			"95" : "Fired-auto-return-redeye"
+		}
+	},
+	"37386" : {
+		"propName" : "focalLength",
+		"datatype" : "&xsd;decimal"
+	},
+	"37396" : {
+		"propName" : "subjectArea"
+	},
+	"37500" : {
+		"propName" : "makerNote"
+	},
+	"37510" : {
+		"propName" : "userComment"
+	},
+	"37520" : {
+		"propName" : "subSecTime"
+	},
+	"37521" : {
+		"propName" : "subSecTimeOriginal"
+	},
+	"37522" : {
+		"propName" : "subSecTimeDigitized"
+	},
+	"40960" : {
+		"propName" : "flashpixVersion",
+		"default" : "Flashpix-1.0",
+		"values" : {
+			"0100" : "Flashpix-1.0"
+		}
+	},
+	"40961" : {
+		"propName" : "colorSpace",
+		"values" : {
+			"1" : "sRGB",
+			"65535" : "uncalibrated"
+		}
+	},
+	"40962" : {
+		"propName" : "pixelXDimension",
+		"datatype" : "&xsd;integer"
+	},
+	"40963" : {
+		"propName" : "pixelYDimension",
+		"datatype" : "&xsd;integer"
+	},
+	"40964" : {
+		"propName" : "relatedSoundFile"
+	},
+	"40965" : {
+		"propName" : "interop-info",
+		"datatype" : "&xsd;integer"
+	},
+	"41483" : {
+		"propName" : "flashEnergy",
+		"datatype" : "&xsd;decimal"
+	},
+	"41484" : {
+		"propName" : "spatialFrequencyResponse"
+	},
+	"41486" : {
+		"propName" : "focalPlaneXResolution",
+		"datatype" : "&xsd;decimal"
+	},
+	"41487" : {
+		"propName" : "focalPlaneYResolution",
+		"datatype" : "&xsd;decimal"
+	},
+	"41488" : {
+		"propName" : "focalPlaneResolutionUnit",
+		"default" : "inches",
+		"values" : {
+			"2" : "inches",
+			"3" : "centimeters"
+		}
+	},
+	"41492" : {
+		"propName" : "subjectLocation"
+	},
+	"41493" : {
+		"propName" : "exposureIndex",
+		"datatype" : "&xsd;decimal"
+	},
+	"41495" : {
+		"propName" : "sensingMethod",
+		"values" : {
+			"1" : "Not-defined",
+			"2" : "One-chip-sensor",
+			"3" : "Two-chip-sensor",
+			"4" : "Three-chip-sensor",
+			"5" : "Sequential-sensor",
+			"7" : "Trilinear-sensor",
+			"8" : "Sequential-linear-sensor"
+		}
+	},
+	"41728" : {
+		"propName" : "fileSource",
+		"default" : "DSC",
+		"values" : {
+			"3" : "DSC"
+		}
+	},
+	"41729" : {
+		"propName" : "sceneType",
+		"default" : "Directly-photographed",
+		"values" : {
+			"1" : "Directly-photographed"
+		}
+	},
+	"41730" : {
+		"propName" : "cfaPattern"
+	},
+	"41985" : {
+		"propName" : "customRendered",
+		"default" : "Normal-process",
+		"values" : {
+			"0" : "Normal-process",
+			"1" : "Custom-process"
+		}
+	},
+	"41986" : {
+		"propName" : "exposureMode",
+		"values" : {
+			"0" : "Auto-exposure",
+			"1" : "Manual-exposure",
+			"2" : "Auto-bracket"
+		}
+	},
+	"41987" : {
+		"propName" : "whiteBalance",
+		"values" : {
+			"0" : "Auto-white-balance",
+			"1" : "Manual-white-balance"
+		}
+	},
+	"41988" : {
+		"propName" : "digitalZoomRatio",
+		"datatype" : "&xsd;decimal"
+	},
+	"41989" : {
+		"propName" : "focalLengthIn35mmFilm",
+		"datatype" : "&xsd;integer"
+	},
+	"41990" : {
+		"propName" : "sceneCaptureType",
+		"default" : "Standard",
+		"values" : {
+			"0" : "Standard",
+			"1" : "Landscape",
+			"2" : "Portrait",
+			"3" : "Night-scene"
+		}
+	},
+	"41991" : {
+		"propName" : "gainControl",
+		"values" : {
+			"0" : "None",
+			"1" : "Low-gain-up",
+			"2" : "High-gain-up",
+			"3" : "Low-gain-down",
+			"4" : "High-gain-down"
+		}
+	},
+	"41992" : {
+		"propName" : "contrast",
+		"default" : "Normal",
+		"values" : {
+			"0" : "Normal",
+			"1" : "Soft",
+			"2" : "Hard"
+		}
+	},
+	"41993" : {
+		"propName" : "saturation",
+		"default" : "Normal",
+		"values" : {
+			"0" : "Normal",
+			"1" : "Low-saturation",
+			"2" : "High-saturation"
+		}
+	},
+	"41994" : {
+		"propName" : "sharpness",
+		"default" : "Normal",
+		"values" : {
+			"0" : "Normal",
+			"1" : "Soft",
+			"2" : "Hard"
+		}
+	},
+	"41995" : {
+		"propName" : "deviceSettingDescription"
+	},
+	"41996" : {
+		"propName" : "subjectDistanceRange",
+		"values" : {
+			"0" : "unknown",
+			"1" : "Macro",
+			"2" : "Close-view",
+			"3" : "Distant-view"
+		}
+	},
+	"42016" : {
+		"propName" : "imageUniqueID"
+	},
+	"g0" : {
+		"propName" : "gpsVersionID"
+	},
+	"g1" : {
+		"propName" : "gpsLatitudeRef",
+		"values" : {
+			"N" : "North-latitude",
+			"S" : "South-latitude"
+		}
+	},
+	"g2" : {
+		"propName" : "gpsLatitude"
+	},
+	"g3" : {
+		"propName" : "gpsLongitudeRef",
+		"values" : {
+			"E" : "East-longitude",
+			"W" : "West-longitude"
+		}
+	},
+	"g4" : {
+		"propName" : "gpsLongitude"
+	},
+	"g5" : {
+		"propName" : "gpsAltitudeRef",
+		"values" : {
+			"0" : "Sea-level",
+			"1" : "Sea-level-reference"
+		}
+	},
+	"g6" : {
+		"propName" : "gpsAltitude",
+		"datatype" : "&xsd;decimal"
+	},
+	"g7" : {
+		"propName" : "gpsTimeStamp"
+	},
+	"g8" : {
+		"propName" : "gpsSatellites"
+	},
+	"g9" : {
+		"propName" : "gpsStatus",
+		"values" : {
+			"A" : "Measurement-in-progress",
+			"V" : "Measurement-Interoperability"
+		}
+	},
+	"g10" : {
+		"propName" : "gpsMeasureMode",
+		"values" : {
+			"2" : "2-dimensional-measurement",
+			"3" : "3-dimensional-measurement"
+		}
+	},
+	"g11" : {
+		"propName" : "gpsDOP",
+		"datatype" : "&xsd;decimal"
+	},
+	"g12" : {
+		"propName" : "gpsSpeedRef",
+		"default" : "Kilometers-per-hour",
+		"values" : {
+			"K" : "Kilometers-per-hour",
+			"M" : "Miles-per-hour",
+			"N" : "Knots"
+		}
+	},
+	"g13" : {
+		"propName" : "gpsSpeed",
+		"datatype" : "&xsd;decimal"
+	},
+	"g14" : {
+		"propName" : "gpsTrackRef",
+		"default" : "True-direction",
+		"values" : {
+			"T" : "True-direction",
+			"M" : "Magnetic-direction"
+		}
+	},
+	"g15" : {
+		"propName" : "gpsTrack",
+		"datatype" : "&xsd;decimal"
+	},
+	"g16" : {
+		"propName" : "gpsImgDirectionRef",
+		"default" : "True-direction",
+		"values" : {
+			"T" : "True-direction",
+			"M" : "Magnetic-direction"
+		}
+	},
+	"g17" : {
+		"propName" : "gpsImgDirection",
+		"datatype" : "&xsd;decimal"
+	},
+	"g18" : {
+		"propName" : "gpsMapDatum"
+	},
+	"g19" : {
+		"propName" : "gpsDestLatitudeRef",
+		"values" : {
+			"N" : "North-latitude",
+			"S" : "South-latitude"
+		}
+	},
+	"g20" : {
+		"propName" : "gpsDestLatitude"
+	},
+	"g21" : {
+		"propName" : "gpsDestLongitudeRef",
+		"values" : {
+			"E" : "East-longitude",
+			"W" : "West-longitude"
+		}
+	},
+	"g22" : {
+		"propName" : "gpsDestLongitude"
+	},
+	"g23" : {
+		"propName" : "gpsDestBearingRef",
+		"default" : "True-direction",
+		"values" : {
+			"T" : "True-direction",
+			"M" : "Magnetic-direction"
+		}
+	},
+	"g24" : {
+		"propName" : "gpsDestBearing",
+		"datatype" : "&xsd;decimal"
+	},
+	"g25" : {
+		"propName" : "gpsDestDistanceRef",
+		"default" : "Kilometers",
+		"values" : {
+			"K" : "Kilometers",
+			"M" : "Miles",
+			"N" : "Knots"
+		}
+	},
+	"g26" : {
+		"propName" : "gpsDestDistance",
+		"datatype" : "&xsd;decimal"
+	},
+	"g27" : {
+		"propName" : "gpsProcessingMethod"
+	},
+	"g28" : {
+		"propName" : "gpsAreaInformation"
+	},
+	"g29" : {
+		"propName" : "gpsDateStamp"
+	},
+	"g30" : {
+		"propName" : "gpsDifferential",
+		"values" : {
+			"0" : "No-differential-correction",
+			"1" : "Differential-correction"
+		}
+	},
+	"i1" : {
+		"propName" : "interoperabilityIndex",
+		"values" : {
+			"R98" : "R98",
+			"THM" : "THM",
+			"R03" : "R03"
+		}
+	},
+	"i2" : {
+		"propName" : "interoperabilityVersion"
+	},
+	"i4096" : {
+		"propName" : "relatedImageFileFormat"
+	},
+	"i4097" : {
+		"propName" : "relatedImageWidth",
+		"datatype" : "&xsd;integer"
+	},
+	"i4098" : {
+		"propName" : "relatedImageLength",
+		"datatype" : "&xsd;integer"
+	},
+	"50341" : {
+		"propName" : "pim-info",
+		"datatype" : "&xsd;integer"
+	},
+	"p9" : {
+		"propName" : "pimContrast"
+	},
+	"p10" : {
+		"propName" : "pimBrightness"
+	},
+	"p11" : {
+		"propName" : "pimColorBalance"
+	},
+	"p12" : {
+		"propName" : "pimSaturation"
+	},
+	"p13" : {
+		"propName" : "pimSharpness"
+	}
+}

@@ -14,3 +14,8 @@ like the following:
        --cert-password password \
        --base https://localhost:4443/ \
        --directory <path-to-directory>
+
+## EXIF Metadata
+
+EXIF metadata is extracted from `image/jpeg` files.  This is done using [the
+`exif2rdf` Perl tool](https://github.com/mkanzaki/exif2rdf).

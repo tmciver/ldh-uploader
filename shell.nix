@@ -1,11 +1,13 @@
 { pkgs ? import <nixpkgs> { } }:
 
 pkgs.mkShell {
-    buildInputs = [
-        pkgs.jdk
-        pkgs.apache-jena
-        pkgs.python
-        pkgs.openssl
-	      pkgs.saxon-he
-    ];
+  buildInputs = [
+    pkgs.perl
+    pkgs.curl
+    pkgs.file
+    pkgs.libuuid
+
+    pkgs.perlPackages.ImageExifTool
+    pkgs.perlPackages.JSON
+  ];
 }

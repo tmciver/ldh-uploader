@@ -1,0 +1,68 @@
+<!DOCTYPE rdf:RDF [
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY exif "http://www.kanzaki.com/ns/exif#">
+]>
+<rdf:RDF
+  xmlns="&exif;"
+  xmlns:exif="&exif;"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+>
+<foaf:Image rdf:about="/home/tim/Pictures/DSCN0011.JPG">
+ <dateTime>2007-06-09T02:57:44</dateTime>
+ <xResolution rdf:datatype="&xsd;decimal">300</xResolution>
+ <yCbCrPositioning rdf:resource="&exif;co-sited"/>
+ <make>NIKON</make>
+ <resolutionUnit rdf:resource="&exif;inches"/>
+ <copyright>Copyright 2006</copyright>
+ <software>COOLPIX L11 V1.0</software>
+ <orientation rdf:resource="&exif;top-left"/>
+ <model>COOLPIX L11</model>
+ <yResolution rdf:datatype="&xsd;decimal">300</yResolution>
+ <imageDescription>          </imageDescription>
+ <exif-info>
+  <Exif_IFD>
+   <maxApertureValue rdf:datatype="&xsd;decimal">3</maxApertureValue>
+   <sensingMethod rdf:resource="&exif;One-chip-sensor"/>
+   <dateTimeOriginal>2007-06-09T02:57:44</dateTimeOriginal>
+   <colorSpace rdf:resource="&exif;sRGB"/>
+   <componentsConfiguration rdf:resource="&exif;YCbCr"/>
+   <customRendered rdf:resource="&exif;Normal-process"/>
+   <exposureMode rdf:resource="&exif;Auto-exposure"/>
+   <gainControl rdf:resource="&exif;Low-gain-up"/>
+   <exifVersion>0220</exifVersion>
+   <whiteBalance rdf:resource="&exif;Auto-white-balance"/>
+   <sceneType rdf:resource="&exif;Directly-photographed"/>
+   <fileSource rdf:resource="&exif;DSC"/>
+   <exposureBiasValue rdf:datatype="&xsd;decimal">0</exposureBiasValue>
+   <exposureTime rdf:datatype="&xsd;decimal">0.03333333333</exposureTime>
+   <contrast rdf:resource="&exif;Normal"/>
+   <flash rdf:resource="&exif;Fired-auto-redeye"/>
+   <focalLength rdf:datatype="&xsd;decimal">6.2</focalLength>
+   <meteringMode rdf:resource="&exif;Pattern"/>
+   <compressedBitsPerPixel rdf:datatype="&xsd;decimal">2</compressedBitsPerPixel>
+   <sharpness rdf:resource="&exif;Normal"/>
+   <focalLengthIn35mmFilm rdf:datatype="&xsd;integer">37 mm</focalLengthIn35mmFilm>
+   <pixelXDimension rdf:datatype="&xsd;integer">2816</pixelXDimension>
+   <digitalZoomRatio rdf:datatype="&xsd;decimal">0</digitalZoomRatio>
+   <lightSource rdf:resource="&exif;unknown"/>
+   <userComment></userComment>
+   <saturation rdf:resource="&exif;Normal"/>
+   <fNumber rdf:datatype="&xsd;decimal">2.8</fNumber>
+   <flashpixVersion rdf:resource="&exif;Flashpix-1.0"/>
+   <subjectDistanceRange rdf:resource="&exif;unknown"/>
+   <isoSpeedRatings rdf:datatype="&xsd;integer">64</isoSpeedRatings>
+   <pixelYDimension rdf:datatype="&xsd;integer">2112</pixelYDimension>
+   <exposureProgram rdf:resource="&exif;Normal-program"/>
+   <sceneCaptureType rdf:resource="&exif;Portrait"/>
+   <dateTimeDigitized>2007-06-09T02:57:44</dateTimeDigitized>
+  </Exif_IFD>
+ </exif-info>
+ <interop-info>
+  <Interop_IFD>
+   <interoperabilityIndex rdf:resource="&exif;R98"/>
+   <interoperabilityVersion>0100</interoperabilityVersion>
+  </Interop_IFD>
+ </interop-info>
+</foaf:Image>
+</rdf:RDF>
