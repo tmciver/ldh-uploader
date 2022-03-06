@@ -1,58 +1,139 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 4 ] && [ "$#" -ne 5 ]; then
-  echo "Usage:   $0" '$base $cert_pem_file $cert_password $abs_filename [$request_base]' >&2
-  echo "Example: $0" 'https://linkeddatahub.com/my-context/my-dataspace/ ../../certs/martynas.stage.localhost.pem Password /folder/file.jpg' >&2
-  echo "Note: special characters such as $ need to be escaped in passwords!" >&2
-  exit 1
+print_usage()
+{
+    printf "Uploads a file.\n"
+    printf "\n"
+    printf "Usage:  %s options [TARGET_URI]\n" "$0"
+    printf "\n"
+    printf "Options:\n"
+    printf "  -f, --cert-pem-file CERT_FILE        .pem file with the WebID certificate of the agent\n"
+    printf "  -p, --cert-password CERT_PASSWORD    Password of the WebID certificate\n"
+    printf "  -b, --base BASE_URI                  Base URI of the application\n"
+    printf "\n"
+    printf "  --title TITLE                        Title of the file\n"
+    printf "  --description DESCRIPTION            Description of the file (optional)\n"
+    printf "  --slug STRING                        String that will be used as URI path segment (optional)\n"
+    printf "\n"
+    printf "  --file ABS_PATH                      Absolute path to the file\n"
+    printf "  --file-content-type MEDIA_TYPE       Media type of the file (optional)\n"
+}
+
+hash curl 2>/dev/null || { echo >&2 "curl not on \$PATH. Aborting."; exit 1; }
+
+args=()
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+
+    case $key in
+        -f|--cert-pem-file)
+        cert_pem_file="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        -p|--cert-password)
+        cert_password="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        -t|--content-type)
+        content_type="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        -b|--base)
+        base="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        --title)
+        title="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        --description)
+        description="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        --slug)
+        slug="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        --file)
+        file="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        --file-content-type)
+        file_content_type="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        --file-slug)
+        file_slug="$2"
+        shift # past argument
+        shift # past value
+        ;;
+        *)    # unknown arguments
+        args+=("$1") # save it in an array for later
+        shift # past argument
+        ;;
+    esac
+done
+set -- "${args[@]}" # restore args
+
+if [ -z "$cert_pem_file" ] ; then
+    print_usage
+    exit 1
+fi
+if [ -z "$cert_password" ] ; then
+    print_usage
+    exit 1
+fi
+if [ -z "$base" ] ; then
+    print_usage
+    exit 1
+fi
+if [ -z "$title" ] ; then
+    print_usage
+    exit 1
+fi
+if [ -z "$file" ] ; then
+    print_usage
+    exit 1
 fi
 
-base="$1"
-cert_pem_file="$2"
-cert_password="$3"
-filename="$4"
+file_container="${base}files/"
 
-if [ -n "$5" ]; then
-    request_base="$5"
-else
-    request_base="$base"
-fi
+pushd "$SCRIPT_ROOT"
 
-path=$(basename $filename) # strip the leading $pwd/
-echo "path: $path"
-#extension="${filename##*.}"
+# upload the file and capture the document URI
+file_doc=$(./imports/create-file.sh \
+    -b "$base" \
+    -f "$cert_pem_file" \
+    -p "$cert_password" \
+    --title "$title" \
+    --file "${file}" \
+    --file-content-type "${file_content_type}" \
+    "$file_container")
 
-# case "$extension" in
-#   png)
-#     content_type="image/png"
-#     ;;
-#   jpg)
-#     content_type="image/jpg"
-#     ;;
-#   svg)
-#     content_type="image/svg+xml"
-#     ;;
-#   webm)
-#     content_type="video/webm"
-#     ;;
-# esac
+echo "file_doc: $file_doc"
 
-content_type=$(file -b --mime-type $filename)
-echo "Content-Type: $content_type" 
+# fetch the triples for the document
+file_ntriples=$(./get-document.sh \
+    -f "$cert_pem_file" \
+    -p "$cert_password" \
+    --accept 'application/n-triples' \
+    "$file_doc")
 
-[ -z "$content_type" ] && echo "Could not determine content type of ${filename}, skipping file" && exit 1
+echo "triples: $file_ntriples"
 
-title="${filename##*/}" # strip folders
+# extract the file URI
+file_uri=$(echo "$file_ntriples" | grep '<http://xmlns.com/foaf/0.1/primaryTopic>' | cut -d " " -f 3 | cut -d "<" -f 2 | cut -d ">" -f 1)
 
-pushd . && cd "$SCRIPT_ROOT/imports"
-
-./create-file.sh \
--b "$base" \
--f "$cert_pem_file" \
--p "$cert_password" \
---title "${title}" \
---file "${filename}" \
---file-content-type "${content_type}" \
-"${request_base}files/"
+echo "file_uri: $file_uri"
 
 popd
