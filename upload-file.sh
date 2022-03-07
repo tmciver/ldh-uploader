@@ -144,6 +144,17 @@ esc_file_uri="${file_uri@Q}"
 echo $esc_file_uri
 
 # replace file path with file URI in RDF-XML
-exif_rdf_xml=$(echo "$exif_rdf_xml" | sed -e 's/^<foaf:Image rdf:about.*/<foaf:Image rdf:about='"${file_uri//\//\\/}"'>/')
+exif_rdf_xml=$(echo "$exif_rdf_xml" | sed -e 's/^<foaf:Image rdf:about.*/<foaf:Image rdf:about="'"${file_uri//\//\\/}"'">/')
 
 echo "RDF-XML: $exif_rdf_xml"
+
+# update the RDF for the file URI
+pushd "$SCRIPT_ROOT"
+
+echo "$exif_rdf_xml" | ./update-document.sh \
+                           -f "$cert_pem_file" \
+                           -p "$cert_password" \
+                           -t "application/rdf+xml" \
+                           "$base"
+
+popd
