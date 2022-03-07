@@ -130,9 +130,14 @@ file_ntriples=$(./get-document.sh \
 
 echo "triples: $file_ntriples"
 
+popd
+
 # extract the file URI
 file_uri=$(echo "$file_ntriples" | grep '<http://xmlns.com/foaf/0.1/primaryTopic>' | cut -d " " -f 3 | cut -d "<" -f 2 | cut -d ">" -f 1)
 
 echo "file_uri: $file_uri"
 
-popd
+# extract EXIF data from image file as RDF-XML
+exif_rdf_xml=$(perl exif2rdf.pl "${file}")
+
+echo "RDF-XML: $exif_rdf_xml"
