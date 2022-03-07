@@ -140,4 +140,10 @@ echo "file_uri: $file_uri"
 # extract EXIF data from image file as RDF-XML
 exif_rdf_xml=$(perl exif2rdf.pl "${file}")
 
+esc_file_uri="${file_uri@Q}"
+echo $esc_file_uri
+
+# replace file path with file URI in RDF-XML
+exif_rdf_xml=$(echo "$exif_rdf_xml" | sed -e 's/^<foaf:Image rdf:about.*/<foaf:Image rdf:about='"${file_uri//\//\\/}"'>/')
+
 echo "RDF-XML: $exif_rdf_xml"
