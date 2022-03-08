@@ -151,7 +151,7 @@ echo "RDF-XML: $exif_rdf_xml"
 # update the RDF for the file URI
 pushd "$SCRIPT_ROOT"
 
-echo "$exif_rdf_xml" | ./update-document.sh \
+echo "$exif_rdf_xml" | ./create-document.sh \
                            -f "$cert_pem_file" \
                            -p "$cert_password" \
                            -t "application/rdf+xml" \
