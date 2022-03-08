@@ -155,6 +155,6 @@ echo "$exif_rdf_xml" | ./update-document.sh \
                            -f "$cert_pem_file" \
                            -p "$cert_password" \
                            -t "application/rdf+xml" \
-                           "$base"
+                           "$file_doc"
 
 popd
