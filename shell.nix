@@ -6,6 +6,8 @@ pkgs.mkShell {
     pkgs.curl
     pkgs.file
     pkgs.libuuid
+    pkgs.saxon-he
+    pkgs.apache-jena
 
     pkgs.perlPackages.ImageExifTool
     pkgs.perlPackages.JSON
