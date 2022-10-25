@@ -119,8 +119,6 @@ file_doc=$(./imports/create-file.sh \
     --file "${file}" \
     --file-content-type "${file_content_type}")
 
-echo "file_doc: $file_doc"
-
 # fetch the triples for the document
 file_ntriples=$(./get-document.sh \
     -f "$cert_pem_file" \
@@ -128,25 +126,18 @@ file_ntriples=$(./get-document.sh \
     --accept 'application/n-triples' \
     "$file_doc")
 
-echo "triples: $file_ntriples"
-
 popd
 
 # extract the file URI
 file_uri=$(echo "$file_ntriples" | grep '<http://xmlns.com/foaf/0.1/primaryTopic>' | cut -d " " -f 3 | cut -d "<" -f 2 | cut -d ">" -f 1)
 
-echo "file_uri: $file_uri"
-
 # extract EXIF data from image file as RDF-XML
 exif_rdf_xml=$(perl exif2rdf.pl "${file}")
 
 esc_file_uri="${file_uri@Q}"
-echo $esc_file_uri
 
 # replace file path with file URI in RDF-XML
 exif_rdf_xml=$(echo "$exif_rdf_xml" | sed -e 's/^<foaf:Image rdf:about.*/<foaf:Image rdf:about="'"${file_uri//\//\\/}"'">/')
-
-echo "RDF-XML: $exif_rdf_xml"
 
 # update the RDF for the file URI
 pushd "$SCRIPT_ROOT"

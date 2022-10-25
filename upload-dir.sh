@@ -99,14 +99,11 @@ else
     maxdepth="-maxdepth 1"
 fi
 
-pushd . && cd "$SCRIPT_ROOT/imports"
-
-create_file="./create-file.sh \
+upload_file="./upload-file.sh \
              -f $cert_pem_file \
              -p $cert_password \
              -b $base \
-             --file-content-type 'image/png' \
              --title \`basename {}\` \
              --file {}"
 
-find "$directory" $maxdepth -type f -exec bash -c "$create_file" \;
+find "$directory" $maxdepth -type f -exec bash -c "$upload_file" \;
