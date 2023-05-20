@@ -12,6 +12,7 @@ pkgs.mkShell {
     pkgs.saxon-he
     pkgs.apache-jena
     pkgs.python2
+    pkgs.inotify-tools
 
     pkgs.perlPackages.ImageExifTool
     pkgs.perlPackages.JSON
