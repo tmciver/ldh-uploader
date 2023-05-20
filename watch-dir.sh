@@ -14,12 +14,10 @@ print_usage()
     printf "  -b, --base BASE_URI                  Base URI of the application\n"
     printf "\n"
     printf "  -d, --directory ABS_PATH             Absolute path to the directory\n"
-    printf "  -r, --recurse                        Recurse into sub-directories\n"
+    printf "  -t, --move-to                        Directory to which uploaded files will be moved. Defaults to `uploaded`, created as a sub-directory to the watched directory.\n"
 }
 
 hash curl 2>/dev/null || { echo >&2 "curl not on \$PATH. Aborting."; exit 1; }
-
-recurse=false
 
 args=()
 while [[ $# -gt 0 ]]
@@ -47,8 +45,8 @@ do
         shift # past argument
         shift # past value
         ;;
-        -r|--recurse)
-        recurse=true
+        -t|--move-to)
+        move_to="$2"
         shift # past argument
         ;;
         *)    # unknown arguments
@@ -76,6 +74,11 @@ if [ -z "$directory" ] ; then
     exit 1
 fi
 
+if [ -z "$move_to" ] ; then
+    move_to="$directory/uploaded"
+    mkdir -p "$move_to"
+fi
+
 urlencode()
 {
     # python -c 'from urllib.parse import urlencode; import sys; print(urlencode(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read()[0:-1]))' "$1"
@@ -94,20 +97,17 @@ else
     target="${1}?forClass=${forClass}"
 fi
 
-if [ "$recurse" = true ] ; then
-    maxdepth=""
-else
-    maxdepth="-maxdepth 1"
-fi
-
 #find "$directory" $maxdepth -type f -exec bash -c "$upload_file" \;
 inotifywait -m "$directory" -e create |
     while read directory action file; do
-        echo "Uploading file $file"
+        # upload the file
         ./upload-file.sh \
             -f $cert_pem_file \
             -p $cert_password \
             -b $base \
             --title "$file" \
             --file "$directory/$file"
+
+        # move it out of the directory
+        mv "$directory/$file" "$move_to"
     done
